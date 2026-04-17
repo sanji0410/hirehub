@@ -1,0 +1,146 @@
+/* pages/employer/PostJob.css */
+
+.pj-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.pj-header { margin-bottom: var(--space-6); }
+.pj-header h1 { margin-bottom: var(--space-1); }
+.pj-header p  { color: var(--gray-400); }
+
+/* Form */
+.pj-form { padding: var(--space-6); }
+
+.pj-section { margin-bottom: var(--space-2); }
+.pj-section-title {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.pj-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.input-error { border-color: var(--error) !important; }
+.field-error {
+  font-size: 0.8125rem;
+  color: var(--error);
+  margin-top: var(--space-1);
+}
+
+.pj-char-count {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  text-align: right;
+  margin-top: var(--space-1);
+}
+
+.pj-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--gray-100);
+}
+
+/* Skill input */
+.skill-input-wrap { display: flex; flex-direction: column; gap: var(--space-3); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); min-height: 28px; }
+.skill-add-row { display: flex; gap: var(--space-3); }
+.skill-add-row .form-input { flex: 1; }
+
+/* Preview sidebar */
+.pj-preview-col {
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.pj-preview { padding: var(--space-5); }
+
+.pj-preview-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-400);
+  margin-bottom: var(--space-4);
+}
+
+.pj-preview-header {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.pj-preview-logo {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-200));
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; color: var(--blue-700);
+  flex-shrink: 0;
+}
+
+.pj-preview-company { font-size: 0.8rem; color: var(--gray-500); }
+.pj-preview-title   { font-size: 1rem; color: var(--gray-900); margin-top: 2px; }
+
+.pj-preview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.pj-preview-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.pj-preview-desc {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.55;
+}
+
+/* Tips */
+.pj-tips { padding: var(--space-5); }
+.pj-tips-title { font-size: 0.9rem; color: var(--gray-700); margin-bottom: var(--space-4); }
+
+.pj-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+  list-style: disc;
+}
+
+.pj-tips-list li {
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pj-layout { grid-template-columns: 1fr; }
+  .pj-preview-col { position: static; }
+}
+
+@media (max-width: 600px) {
+  .pj-row { grid-template-columns: 1fr; }
+}

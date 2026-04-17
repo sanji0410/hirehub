@@ -1,0 +1,20 @@
+/* pages/employer/EmployerJobs.css */
+
+.ej-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.ej-header h1 { margin-bottom: var(--space-1); }
+.ej-header p  { color: var(--gray-400); }
+
+.ej-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-5);
+}
+
+.ej-job-wrap { position: relative; }

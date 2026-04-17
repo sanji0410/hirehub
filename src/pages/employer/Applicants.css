@@ -1,0 +1,131 @@
+/* pages/employer/Applicants.css */
+
+/* Header card */
+.ap-header {
+  padding: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.ap-header-info {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.ap-job-logo {
+  width: 52px; height: 52px;
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-200));
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.25rem; font-weight: 700; color: var(--blue-700);
+  flex-shrink: 0;
+}
+
+.ap-job-company { font-size: 0.8125rem; color: var(--gray-500); font-weight: 600; }
+.ap-job-title   { font-size: 1.4rem; color: var(--gray-900); margin-top: var(--space-1); }
+
+.ap-header-stat { text-align: right; }
+.ap-count       { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--blue-700); line-height: 1; }
+.ap-count-label { font-size: 0.8125rem; color: var(--gray-400); margin-top: var(--space-1); }
+
+/* Filters */
+.ap-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.ap-filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  background: white;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+.ap-filter-btn:hover  { border-color: var(--blue-300); color: var(--blue-700); }
+.ap-filter-btn.active { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+
+/* Applicant cards */
+.ap-list { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.ap-card {
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.ap-card-selected {
+  border-color: var(--blue-300);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1), var(--shadow-md);
+}
+
+.ap-card-main {
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.ap-avatar {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; color: #3730a3;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ap-info { flex: 1; min-width: 0; }
+.ap-name  { font-weight: 600; color: var(--gray-800); font-size: 0.9375rem; }
+.ap-email { font-size: 0.8125rem; color: var(--gray-400); margin-top: 1px; }
+.ap-date  { font-size: 0.75rem;  color: var(--gray-400); margin-top: 2px; }
+
+.ap-actions { flex-shrink: 0; }
+
+/* Expanded section */
+.ap-expanded {
+  border-top: 1px solid var(--gray-100);
+  padding: var(--space-5);
+  background: var(--gray-50);
+}
+
+.ap-cover-letter { margin-bottom: var(--space-5); }
+.ap-cover-label  { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-400); margin-bottom: var(--space-2); }
+.ap-cover-text   { font-size: 0.875rem; color: var(--gray-600); line-height: 1.65; background: white; padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--gray-100); }
+
+.ap-status-label   { font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: var(--space-3); }
+.ap-status-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+.ap-status-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  background: white;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+.ap-status-btn:hover  { border-color: var(--blue-400); background: var(--blue-50); color: var(--blue-700); }
+.ap-status-btn.current { background: var(--blue-600); border-color: var(--blue-600); color: white; }
+
+@media (max-width: 600px) {
+  .ap-card-main { flex-wrap: wrap; }
+  .ap-actions   { width: 100%; }
+  .ap-actions .btn { width: 100%; justify-content: center; }
+}

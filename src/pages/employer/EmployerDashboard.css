@@ -1,0 +1,149 @@
+/* pages/employer/EmployerDashboard.css */
+
+/* Welcome header */
+.emp-welcome {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.emp-welcome h1 { margin-bottom: var(--space-1); }
+.emp-welcome p  { color: var(--gray-400); }
+
+.emp-welcome-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Stats grid */
+.emp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+/* Charts row */
+.emp-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.emp-chart-card,
+.emp-status-card,
+.emp-recent {
+  padding: var(--space-5);
+}
+
+.emp-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+.emp-card-header h4 { font-size: 0.9375rem; color: var(--gray-800); }
+
+/* Bar chart canvas */
+.bar-chart-canvas {
+  width: 100%;
+  height: 220px;
+  display: block;
+}
+
+/* Status bars */
+.emp-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.emp-status-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.emp-status-label {
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.emp-status-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.emp-status-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+  min-width: 4px;
+}
+
+.emp-status-count {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Recent applications */
+.emp-recent-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.emp-recent-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--gray-50);
+}
+.emp-recent-item:last-child { border-bottom: none; }
+
+.emp-recent-avatar {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--blue-100), var(--blue-300));
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700; color: var(--blue-800);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.emp-recent-info { flex: 1; min-width: 0; }
+.emp-recent-name { font-weight: 600; color: var(--gray-800); font-size: 0.875rem; }
+.emp-recent-job  { font-size: 0.75rem; color: var(--gray-400); margin-top: 1px; }
+
+.emp-recent-time {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .emp-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .emp-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .emp-stats { grid-template-columns: 1fr 1fr; }
+  .emp-recent-item .btn { display: none; }
+}
