@@ -158,12 +158,19 @@ export default function Applicants() {
                     </button>
 
                     {/* Existing Manage / Close toggle */}
-                    <button
-                      className="btn btn-primary btn-sm"
-                      onClick={() => setSelectedApp(selectedApp?.id === app.id ? null : app)}
-                    >
-                      {selectedApp?.id === app.id ? 'Close' : 'Manage'}
-                    </button>
+                   <button
+  className="btn btn-outline btn-sm"
+  onClick={() => {
+    const subject = encodeURIComponent("Interview Selection");
+    const body = encodeURIComponent(
+      `Hello ${app.seekerName}, you are selected for the next round. Please attend the interview on [DATE] at [LOCATION].`
+    );
+
+    window.location.href = `mailto:${app.email}?subject=${subject}&body=${body}`;
+  }}
+>
+  📧 Send Email
+</button>
                   </div>
                 </div>
 
