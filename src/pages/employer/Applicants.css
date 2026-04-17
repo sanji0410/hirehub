@@ -129,3 +129,11 @@
   .ap-actions   { width: 100%; }
   .ap-actions .btn { width: 100%; justify-content: center; }
 }
+
+/* ── Resume & Email action buttons: allow row to wrap on small screens ── */
+.ap-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}

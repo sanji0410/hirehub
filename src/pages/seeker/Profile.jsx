@@ -157,6 +157,8 @@ export default function Profile() {
 
     // Persist the filename so the label re-appears after a page reload
     localStorage.setItem(`hh_resume_name_${user.id}`, file.name);
+    // Also persist the object URL so the apply function can attach it to the application
+    localStorage.setItem(`hh_resume_url_${user.id}`, url);
   };
 
   // Remove the uploaded resume
@@ -166,6 +168,7 @@ export default function Profile() {
     setResumeName(null);
     setResumeError('');
     localStorage.removeItem(`hh_resume_name_${user.id}`);
+    localStorage.removeItem(`hh_resume_url_${user.id}`);
     // Reset the file input so the same file can be re-uploaded
     if (fileInputRef.current) fileInputRef.current.value = '';
   };

@@ -125,8 +125,41 @@ export default function Applicants() {
 
                   {/* Action buttons */}
                   <div className="ap-actions">
+                    {/* ── FEATURE 1: View Resume ── */}
+                    {app.resume ? (
+                      <button
+                        className="btn btn-outline btn-sm"
+                        title={app.resumeName || 'View resume PDF'}
+                        onClick={() => window.open(app.resume, '_blank', 'noopener,noreferrer')}
+                      >
+                        📄 View Resume
+                      </button>
+                    ) : (
+                      <button className="btn btn-ghost btn-sm" disabled title="No resume uploaded">
+                        📄 No Resume
+                      </button>
+                    )}
+
+                    {/* ── FEATURE 2: Send Selection Email ── */}
                     <button
                       className="btn btn-outline btn-sm"
+                      title={`Send selection email to ${app.seekerEmail}`}
+                      onClick={() => {
+                        window.location.href =
+                          `mailto:${app.seekerEmail}` +
+                          `?subject=Interview%20Selection` +
+                          `&body=Hello%20${encodeURIComponent(app.seekerName)}%2C%0A%0A` +
+                          `You%20are%20selected%20for%20the%20next%20round.%20` +
+                          `Please%20attend%20the%20interview%20on%20%5BDATE%5D%20` +
+                          `at%20%5BLOCATION%5D.%0A%0ABest%20regards`;
+                      }}
+                    >
+                      ✉ Send Email
+                    </button>
+
+                    {/* Existing Manage / Close toggle */}
+                    <button
+                      className="btn btn-primary btn-sm"
                       onClick={() => setSelectedApp(selectedApp?.id === app.id ? null : app)}
                     >
                       {selectedApp?.id === app.id ? 'Close' : 'Manage'}

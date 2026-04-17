@@ -133,6 +133,12 @@ export function JobsProvider({ children }) {
     const already = applications.find(a => a.jobId === jobId && a.seekerId === seeker.id);
     if (already) return { success: false, error: 'Already applied to this job.' };
 
+    // Read the seeker's uploaded resume from localStorage (saved by Profile page).
+    // hh_resume_url_<id>  — the object URL created via URL.createObjectURL()
+    // hh_resume_name_<id> — the original filename for display purposes
+    const resume     = localStorage.getItem(`hh_resume_url_${seeker.id}`) || null;
+    const resumeName = localStorage.getItem(`hh_resume_name_${seeker.id}`) || null;
+
     const newApp = {
       id: `a${Date.now()}`,
       jobId,
@@ -142,6 +148,8 @@ export function JobsProvider({ children }) {
       status: 'applied',
       appliedAt: new Date().toISOString(),
       coverLetter,
+      resume,      // object URL — viewable in the same browser session
+      resumeName,  // shown to employer even after session ends
     };
     const updated = [newApp, ...applications];
     setApplications(updated);
