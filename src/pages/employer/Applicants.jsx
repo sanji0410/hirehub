@@ -142,23 +142,6 @@ export default function Applicants() {
 
                     {/* ── FEATURE 2: Send Selection Email ── */}
                     <button
-                      className="btn btn-outline btn-sm"
-                      title={`Send selection email to ${app.seekerEmail}`}
-                      onClick={() => {
-                        window.location.href =
-                          `mailto:${app.seekerEmail}` +
-                          `?subject=Interview%20Selection` +
-                          `&body=Hello%20${encodeURIComponent(app.seekerName)}%2C%0A%0A` +
-                          `You%20are%20selected%20for%20the%20next%20round.%20` +
-                          `Please%20attend%20the%20interview%20on%20%5BDATE%5D%20` +
-                          `at%20%5BLOCATION%5D.%0A%0ABest%20regards`;
-                      }}
-                    >
-                      ✉ Send Email
-                    </button>
-
-                    {/* Existing Manage / Close toggle */}
-                   <button
   className="btn btn-outline btn-sm"
   onClick={() => {
     const subject = encodeURIComponent("Interview Selection");
@@ -166,11 +149,13 @@ export default function Applicants() {
       `Hello ${app.seekerName}, you are selected for the next round. Please attend the interview on [DATE] at [LOCATION].`
     );
 
-    window.location.href = `mailto:${app.email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${app.seekerEmail}?subject=${subject}&body=${body}`;
   }}
 >
   📧 Send Email
 </button>
+                    {/* Existing Manage / Close toggle */}
+                   
                   </div>
                 </div>
 
